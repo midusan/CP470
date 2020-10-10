@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Assignment1</string>
-    <string name="hello_message">Vannakkam!</string>
-    <string name="ButtonText">I\’m a button</string>
+    <string name="hello_message">வணக்கம்!</string>
+    <string name="ButtonText">நான் ஒரு பட்டன்</string>
+    <string name="login">உள்நுழைய</string>
+    <string name="password">கடவுச்சொல்</string>
+    <string name="login_hint">பயனர்பெயர்</string>
+    <string name="switch_text">இது என்ன செய்கிறது?</string>
+    <string name="radio_text">ரேடியோ பட்டன்</string>
+    <string name="checkBox_text">தேர்வுப்பெட்டி</string>
 </resources>
