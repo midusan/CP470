@@ -8,4 +8,10 @@
     <string name="switch_text">What does this do?</string>
     <string name="radio_text">RadioButton</string>
     <string name="checkBox_text">CheckBox</string>
+    <string name="preference_file_key" />
+    <string name="dialog_message">Do you want to finish the activity?</string>
+    <string name="dialog_title">Finish Activity</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
+
 </resources>
