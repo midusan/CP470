@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Log.i(ACTIVITY_NAME, "In onCreate()");
-        editText = findViewById(R.id.user_input);
+        final EditText editText = findViewById(R.id.user_input);
         Button button = findViewById(R.id.login_button);
         SharedPreferences sp = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         sp.getString("DefaultEmail", "email@domain.com");
@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
                 editText.setText("");
                 editText.setText(name);
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, StartActivity.class);
                 startActivity(intent);
             }
         });

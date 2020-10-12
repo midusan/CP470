@@ -14,4 +14,7 @@
     <string name="dialog_title">செயல்பாட்டை முடிக்கவும்</string>
     <string name="ok">ஆம்</string>
     <string name="cancel">இல்லை</string>
+    <string name="start_chat">அரட்டை தொடங்கவும்</string>
+    <string name="message_text">புதிய உரை</string>
+    <string name="send">அனுப்பு</string>
 </resources>
