@@ -4,18 +4,22 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFFFBB33"
         android:contentDescription="@string/app_name"
         android:scaleType="center"
         android:src="@drawable/icons8_google_alerts_24" />
+
     <EditText
         android:id="@+id/new_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif"/>
+        android:layout_marginBottom="4dp"
+        android:inputType="text"
+        android:autofillHints="@string/message_text"
+        android:hint="@string/message_text" />
 </LinearLayout>

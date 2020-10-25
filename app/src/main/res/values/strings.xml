@@ -14,7 +14,8 @@
     <string name="ok">Yes</string>
     <string name="cancel">No</string>
     <string name="start_chat">Start Chat</string>
-    <string name="message_text">New Text</string>
+    <string name="message_title">New Text</string>
+    <string name="message_text">Enter a new message.</string>
     <string name="send">Send</string>
     <string name="title_activity_test_toolbar">TestToolbar</string>
     <string name="first_fragment_label">First Fragment</string>
