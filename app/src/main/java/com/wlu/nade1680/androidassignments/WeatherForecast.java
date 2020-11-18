@@ -53,14 +53,15 @@ public class WeatherForecast extends AppCompatActivity {
         pb = findViewById(R.id.pb);
         pb.setVisibility(View.VISIBLE);
         cities = Arrays.asList(getResources().getStringArray(R.array.cities));
-        ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.cities, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.cities, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         drop_down.setAdapter(adapter);
         drop_down.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 new ForecastQuery(cities.get(position)).execute();
-                city.setText(cities.get(position) + " Weather");
+                String new_city = cities.get(position) + " Weather";
+                city.setText(new_city);
             }
 
             @Override
@@ -88,8 +89,7 @@ public class WeatherForecast extends AppCompatActivity {
                 conn.setRequestMethod("GET");
                 conn.setDoInput(true);
                 conn.connect();
-                InputStream in = conn.getInputStream();
-                try {
+                try (InputStream in = conn.getInputStream()) {
                     XmlPullParser parser = Xml.newPullParser();
                     parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
                     parser.setInput(in, null);
@@ -106,7 +106,7 @@ public class WeatherForecast extends AppCompatActivity {
                                 String icon_name = parser.getAttributeValue(null, "icon");
                                 String icon_file = icon_name + ".png";
                                 Log.i(ACTIVITY_NAME, "Looking for file " + icon_file);
-                                if (fileExistance(icon_file)) {
+                                if (fileExistence(icon_file)) {
                                     FileInputStream fis = null;
                                     try {
                                         fis = openFileInput(icon_file);
@@ -129,8 +129,6 @@ public class WeatherForecast extends AppCompatActivity {
                         }
                         parser.next();
                     }
-                }finally{
-                    in.close();
                 }
             }catch (Exception ex) {
                 ex.printStackTrace();
@@ -138,8 +136,8 @@ public class WeatherForecast extends AppCompatActivity {
             return "";
         }
 
-        public boolean fileExistance(String fname) {
-            File file = getBaseContext().getFileStreamPath(fname);
+        public boolean fileExistence(String f_name) {
+            File file = getBaseContext().getFileStreamPath(f_name);
             return file.exists();
         }
         public Bitmap getImage(URL url) {
@@ -166,9 +164,12 @@ public class WeatherForecast extends AppCompatActivity {
         protected void onPostExecute(String a){
             pb.setVisibility(View.INVISIBLE);
             curr_weather_pic.setImageBitmap(bm);
-            curr_temp.setText(new_curr_temp + "C\u00b0");
-            min.setText(new_min + "C\u00b0");
-            max.setText(new_max + "C\u00b0");
+            String new_temp = new_curr_temp + "C\u00b0";
+            curr_temp.setText(new_temp);
+            String newer_min = new_min + "C\u00b0";
+            min.setText(newer_min);
+            String newer_max = new_max + "C\u00b0";
+            max.setText(newer_max);
         }
         }
 

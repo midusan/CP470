@@ -25,6 +25,9 @@
     <string name="temp">temp</string>
     <string name="min">min</string>
     <string name="max">max</string>
+    <string name="current_temperature">Current Temperature:</string>
+    <string name="min_temperature">Min Temperature:</string>
+    <string name="max_temperature">Max Temperature:</string>
 
     <string-array name="cities">
         <item>Abbotsford</item>

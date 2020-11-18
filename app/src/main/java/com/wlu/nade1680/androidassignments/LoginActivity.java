@@ -14,8 +14,6 @@ public class LoginActivity extends AppCompatActivity {
 
     protected static final String ACTIVITY_NAME = "LoginActivity";
 
-    private EditText editText;
-
     private static final String SHARED_PREF_NAME = "username";
     private static final String KEY_NAME = "key_username";
 
