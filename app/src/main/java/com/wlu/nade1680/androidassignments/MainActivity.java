@@ -17,10 +17,18 @@ public class MainActivity extends AppCompatActivity {
         Log.i(ACTIVITY_NAME, "In onCreate()");
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.button);
+        Button weather_button = findViewById(R.id.weather_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
                 startActivityForResult(intent,10);
+            }
+        });
+        weather_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WeatherForecast.class);
+                startActivity(intent);
             }
         });
     }

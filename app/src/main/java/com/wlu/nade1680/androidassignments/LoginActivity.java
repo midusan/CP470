@@ -41,10 +41,11 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
                 editText.setText("");
                 editText.setText(name);
-                Intent intent = new Intent(LoginActivity.this, StartActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 
     protected void onResume() {

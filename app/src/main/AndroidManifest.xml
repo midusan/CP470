@@ -6,7 +6,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,9 +15,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".WeatherForecast"
+            android:label="@string/weather_text"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".TestToolbar"
             android:label="@string/title_activity_test_toolbar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ChatWindow" />
         <activity android:name=".StartActivity" />
         <activity android:name=".ListItemsActivity" />
